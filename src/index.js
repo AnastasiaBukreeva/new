@@ -5,9 +5,7 @@ import {Cardlist} from './Cardlist.js'
 import {UserInfo} from './UserInfo.js'
 import {FormValidator} from './FormValidator.js'
 import {Popup} from './Popup.js'
-// index.js
 
-import './pages/style.css'
 
 
 ( function () {
