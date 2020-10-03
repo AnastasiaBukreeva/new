@@ -1,8 +1,11 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+//const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const isDev = process.env.NODE_ENV === 'development';
 
  
 
@@ -19,8 +22,17 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
-            
+                use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 
+                {
+                    loader:'css-loader',
+                    options: {
+                        importLoaders: 2
+                    }                    
+
+                },
+               'postcss-loader'
+            ]
+
             },
         
             { // тут описываются правила
@@ -51,7 +63,15 @@ module.exports = {
             // filename: 'style.css'
             filename: 'style.[contenthash].css',
          }),
-        new CleanWebpackPlugin(),
+         new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+                    preset: ['default'],
+            },
+            canPrint: true
+    }),
+        //new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: false,
@@ -59,5 +79,8 @@ module.exports = {
         }),
        
         new WebpackMd5Hash(), 
+        new webpack.DefinePlugin({
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }) 
     ]
 };
