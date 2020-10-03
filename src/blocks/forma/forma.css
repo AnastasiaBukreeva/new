@@ -1,0 +1,20 @@
+@import url(./__content/forma__content.css);
+@import url(./__close/forma__close.css);
+@import url(./__title/forma__title.css);
+@import url(./__form/forma__form.css);
+@import url(./__input/forma__input.css);
+@import url(./__button/forma__button.css);
+@import url(./_is-opened/forma_is-opened.css);
+
+.forma {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }

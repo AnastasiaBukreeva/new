@@ -1,0 +1,92 @@
+@import url(../../vendor/normalize.css);
+@import url(../../vendor/fonts.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/logo/logo.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/user-info/user-info.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/places-list/places-list.css); 
+@import url(../blocks/place-card/place-card.css); 
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/forma/forma.css);
+
+@import url(../blocks/picture/picture.css);
+
+
+body {
+  background-color: #000;
+}
+
+.error {
+  color: #FF3333;
+  font-size: 0.8em;
+  transition: .3s;
+  padding: 0px;
+  opacity: 1;
+}
+
+.popup__button_disabled{
+  /*background-color: #f1f1f1;*/
+  background-color: black;
+  cursor: default;
+  color: white;
+}
+
+.picture {
+position: fixed;
+right: 0;
+top: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, .5);
+align-items: center;
+justify-content: center;
+display: none;
+background-repeat: no-repeat;
+}
+
+.picture__content {
+position: relative;
+max-width: 80vw;
+max-height: 80vh;
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+box-sizing: border-box;
+display: none;
+}
+.picture__image {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80vw;
+max-height: 80vh;
+}
+
+
+.picture.popup_is-opened {
+  display: flex;
+}
+.picture__content.popup_is-opened {
+  display: flex;
+}
+
+.picture__close_image {
+  width: 26px;
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  cursor: pointer;
+}
+
+
+
+.button_type_edit {
+  position: absolute;
+  width: 38px;
+  height: 18px;
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 15px;
+        
+  }
