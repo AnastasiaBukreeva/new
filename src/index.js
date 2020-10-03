@@ -6,7 +6,7 @@ import {UserInfo} from './UserInfo.js'
 import {FormValidator} from './FormValidator.js'
 import {Popup} from './Popup.js'
 
-
+//import {Popup} from './Popup.js'
 
 ( function () {
 const addNewCard = document.querySelector(".popup");
