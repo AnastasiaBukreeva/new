@@ -7,7 +7,7 @@ import {FormValidator} from './FormValidator.js'
 import {Popup} from './Popup.js'
 // index.js
 
-import './pages/index.css'
+import './pages/style.css'
 
 
 ( function () {
