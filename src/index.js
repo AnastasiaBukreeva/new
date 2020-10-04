@@ -23,6 +23,7 @@ const inputJob = document.querySelector(".popup__input_type_info");
 const actualName = document.querySelector(".user-info__name");
 const actualJob = document.querySelector(".user-info__job");
 const popupImageContent = document.querySelector('.picture__content');
+//const popupImageContent = document.querySelector('.picture__content');
 const popupImage = document.querySelector('.picture')
 const imagePicture = document.querySelector('.picture__image')
 const addNewInfo = document.querySelector('.popup_type_profile');
